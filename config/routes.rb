@@ -12,10 +12,21 @@ Rails.application.routes.draw do
   resources :bookings, only: [:index]
 
   resources :users, only: [:new, :create, :destroy]
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+  get '/components_alex' => 'pages#components_alex'
+=======
+  get "/components_alexander/", to: "pages#components_alexander"
+
+  get "/components_jorgen/", to: "pages#components_jorgen"
+>>>>>>> bda1fe2a6d5e84c9dea19a1874b67a553583f69b
+=======
 
   get '/components_alex' => 'pages#components_alex'
 
   get "/components_alexander/", to: "pages#components_alexander"
 
   get "/components_jorgen/", to: "pages#components_jorgen"
+>>>>>>> 676ee0724a8297b49b1b4203e3b6e27e4699fb12
 end
