@@ -3,7 +3,9 @@ class PagesController < ApplicationController
   end
 
   def components_alexander
+    @grandma = Grandma.new
   end
+
   def components_jorgen
   end
 end
