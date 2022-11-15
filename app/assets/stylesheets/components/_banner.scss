@@ -1,0 +1,34 @@
+// font: remove later when main font is set
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+.banner {
+  font-family: 'Inter', sans-serif;
+}
+
+.banner {
+  background-color: #FDE0D8;
+  background-size: cover;
+  background-position: center;
+  padding: 30px 0;
+
+    p {
+      font-size: 20px;
+      color: white;
+      opacity: .7;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      margin: 0;
+      // change color when main is set
+      color: #101419;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      font-size: 64px;
+    }
+
+    // change when buttons are finished
+    .banner-button {
+      width: 200px;
+      height: 65px;
+      border-radius: 25px;
+    }
+}
