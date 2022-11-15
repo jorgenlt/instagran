@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   resources :bookings, only: [:index]
 
   resources :users, only: [:new, :create, :destroy]
+
+  get "/components_jorgen/", to: "pages#components_jorgen"
 end
