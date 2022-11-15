@@ -4,4 +4,6 @@ class PagesController < ApplicationController
 
   def components_alexander
   end
+  def components_jorgen
+  end
 end
