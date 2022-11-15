@@ -1,0 +1,20 @@
+<h1>Components</h1>
+
+<div class="main-card">
+<img src = "https://media.istockphoto.com/id/1216426253/photo/portrait-of-healthy-african-american-senior-woman.jpg?s=612x612&w=0&k=20&c=pJv9X0QPyKWy8-_NUc2ipYc-shPoE7yYMPS-qair2fM=">
+<div class="card-text">
+  <h2>Grandma Name</h2>
+  <p>Small description of Grandma goes here.</p>
+</div>
+</div>
+
+<div class="create-form">
+<h2>Create a new grandma</h2>
+  <%= simple_form_for @grandma do |f| %>
+    <%= f.input :first_name, label: false, placeholder: "First name", input_html: { class:"form-input" } %>
+    <%= f.input :last_name, label: false, placeholder: "Last name", input_html: { class:"form-input" }  %>
+    <%= f.input :address, label: false, placeholder: "Address", input_html: { class:"form-input" }  %>
+    <%= f.input :description, label: false, placeholder: "Description", as: :text, input_html: { class:"form-input", :rows => 5 }  %>
+    <%= f.button :submit, input_html: { class:"button-primary" }  %>
+  <% end %>
+</div>
