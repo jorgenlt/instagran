@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   resources :bookings, only: [:index]
 
   resources :users, only: [:new, :create, :destroy]
+  get "components-julia", to: "pages#components_julia"
 end
