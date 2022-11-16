@@ -1,0 +1,23 @@
+
+
+<div class="d-flex flex-row" id="new-div">
+  <div id="new-pics">
+
+  </div>
+  <div class="create-form">
+    <h2>Create a new grandma</h2>
+    <%= simple_form_for @grandma do |f| %>
+      <%= f.input :first_name, label: false, placeholder: "First name", input_html: { class:"form-input" } %>
+      <%= f.input :last_name, label: false, placeholder: "Last name", input_html: { class:"form-input" }  %>
+      <%= f.input :address, label: false, placeholder: "Address", input_html: { class:"form-input" }  %>
+      <%= f.input :description, label: false, placeholder: "Description", as: :text, input_html: { class:"form-input", :rows => 5 }  %>
+      <%= f.button :submit, input_html: { class:"button-primary" }  %>
+    <% end %>
+  </div>
+</div>
+
+<% if flash[:alert] %>
+      <div id="alert">
+         <%= flash[:alert] %>
+      </div>
+<% end %>
