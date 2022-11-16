@@ -15,6 +15,13 @@
     <%= f.input :last_name, label: false, placeholder: "Last name", input_html: { class:"form-input" }  %>
     <%= f.input :address, label: false, placeholder: "Address", input_html: { class:"form-input" }  %>
     <%= f.input :description, label: false, placeholder: "Description", as: :text, input_html: { class:"form-input", :rows => 5 }  %>
-    <%= f.button :submit, input_html: { class:"button-primary" }  %>
+    <%= f.button :submit, 'Create profile', class:"button-primary", id:"full-width"  %>
   <% end %>
+</div>
+
+<div class="upload-image-grid">
+<div class="image-square" id="image-square-one"><p>+</p></div>
+<div class="image-square" id="image-square-two"><p>+</p></div>
+<div class="image-square" id="image-square-three"><p>+</p></div>
+<div class="image-square" id="image-square-four"><p>+</p></div>
 </div>
