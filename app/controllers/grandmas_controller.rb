@@ -12,14 +12,14 @@ class GrandmasController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
+    @user = current_user
     @grandma = Grandma.new(grandma_params)
     @grandma.user = @user
 
     if @grandma.save
       redirect_to grandma_path(@grandma)
     else
-      raise
+      render :new
     end
   end
 
