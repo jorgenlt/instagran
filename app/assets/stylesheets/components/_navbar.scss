@@ -1,3 +1,8 @@
+#navbar {
+  height: 100px;
+  background-color: #FDE0D8;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
@@ -9,4 +14,47 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+#login-btn {
+  height: 60px;
+  width: 200px;
+  background-color:#F46036;
+  color: white;
+  border-radius: 25px;
+  margin-right: 30px;
+
+    a {
+      color: white;
+    }
+}
+
+.navbar-brand {
+  font-size: 40px;
+  font-weight: 300;
+  color: #F46036;
+}
+
+#_user_search {
+  height: 60px;
+  width: 280px;
+  border-radius: 25px 0px 0px 25px;
+  background-color: white;
+
+    &::active {
+      // border: none;
+    }
+}
+
+#search-div {
+  margin-bottom: 0px;
+  margin-top: 12px;
+}
+
+#search-button {
+  height: 60px;
+  width: 140px;
+  background: #F46036;
+  border-radius: 0px 25px 25px 0px;
+  color: white;
 }
