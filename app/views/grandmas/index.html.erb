@@ -1,15 +1,19 @@
-
-<h1>Location</h1>
 <div class="container">
 	<div class="left-card">
-		<% 10.times do %>
+
+	<% @grandmas.each do |grandma| %>
+		<a href="grandmas/<%= grandma.id %>">
 			<div class="main-card">
-				<img src = "https://media.istockphoto.com/id/1216426253/photo/portrait-of-healthy-african-american-senior-woman.jpg?s=612x612&w=0&k=20&c=pJv9X0QPyKWy8-_NUc2ipYc-shPoE7yYMPS-qair2fM=">
+				<div class="pic-size">
+					<img src = <%= grandma.photo_url %>>
+				</div>
 				<div class="card-text">
-				  <h2>Gertrude</h2>
-				  <p>I love cooking :)</p>
+				  <h2><%= "#{grandma.first_name} #{grandma.last_name} "%></h2>
+				  <p><%= grandma.description %></p>
 				</div>
 			</div>
+		</a>
+
 		<% end %>
 	</div>
 
