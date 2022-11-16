@@ -1,10 +1,10 @@
 class PagesController < ApplicationController
   def home
+    
   end
 
 
   def components_julia
-  
   end
   
   def components_alex
