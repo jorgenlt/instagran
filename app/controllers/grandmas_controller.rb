@@ -12,14 +12,14 @@ class GrandmasController < ApplicationController
   end
 
   def create
+    @user = User.find(params[:user_id])
     @grandma = Grandma.new(grandma_params)
-
+    @grandma.user = @user
 
     if @grandma.save
-      # redirect_to grandma_path(@grandma.id)
-      redirect_to root_path
+      redirect_to grandma_path(@grandma)
     else
-      flash.alert = "Error! Grandma was not created."
+      raise
     end
   end
 
@@ -34,6 +34,6 @@ class GrandmasController < ApplicationController
   private
 
   def grandma_params
-    params.require(:grandma).permit(:first_name, :last_name, :address, :description)
+    params.require(:grandma).permit(:first_name, :last_name, :address, :description, :user_id)
   end
 end
