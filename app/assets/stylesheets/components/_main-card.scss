@@ -8,10 +8,11 @@
   max-width: 335px;
 
 
-  img{
+  img {
     border-radius: 25px;
     width: 100%;
-    max-height: 250px;
+    object-fit: cover;
+    max-height: 150px;
   }
 }
 
