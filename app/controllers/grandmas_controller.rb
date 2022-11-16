@@ -3,6 +3,7 @@ class GrandmasController < ApplicationController
   end
 
   def show
+    @grandma = Grandma.find(params[:id])
   end
 
   def new
