@@ -2,7 +2,7 @@
 	<div class="left-card">
 
 	<% @grandmas.each do |grandma| %>
-		<a href="grandmas/<%= grandma.id %>">
+		<a class="link-wrapper" href="grandmas/<%= grandma.id %>">
 			<div class="main-card">
 				<div class="pic-size">
 					<img src = <%= grandma.photo_url %>>

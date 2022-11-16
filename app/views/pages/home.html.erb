@@ -12,7 +12,7 @@
 <div class="card-container p-5 d-flex flex-column">
   <div class="d-flex flex-row">
     <% @grandmas.each do |grandma| %>
-		<a href="grandmas/<%= grandma.id %>">
+		<a class="link-wrapper" href="grandmas/<%= grandma.id %>">
 			<div class="main-card">
 				<div class="pic-size">
 					<img src = <%= grandma.photo_url %>>
