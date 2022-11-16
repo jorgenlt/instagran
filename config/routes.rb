@@ -13,16 +13,14 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :destroy]
 
-  get '/components_alex' => 'pages#components_alex'
+  get "components-julia", to: "pages#components_julia"
 
-  get "/components_alexander/", to: "pages#components_alexander"
-
-  get "/components_jorgen/", to: "pages#components_jorgen"
 
   get '/components_alex' => 'pages#components_alex'
 
   get "/components_alexander/", to: "pages#components_alexander"
 
   get "/components_jorgen/", to: "pages#components_jorgen"
+
 
 end
