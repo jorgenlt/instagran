@@ -1,0 +1,66 @@
+.simple_form {
+	align-items: center;
+  background-color: #FDE0D8;
+	border-radius: 25px;
+	padding: 20px;
+	width: 30%;
+	color: #FFFFFFFF;
+}
+
+.btn {
+	background-color: #F46036;
+  border-radius: 25px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 200ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #d03b12;
+  color: #ffffff;
+}
+
+.form-actions {
+	background-color: #FDE0D8;
+	color: #F46036;
+	border-radius: 25px;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+
+.form-label {
+  color: #101419;
+  font-weight: 100;
+}
+
+.form-select {
+  border-radius: 25px;
+  color: black;
+}
+
+.booking_form_title {
+  color: #101419;
+  font-weight: lighter;
+}
