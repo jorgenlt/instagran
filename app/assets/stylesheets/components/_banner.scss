@@ -36,7 +36,7 @@
     .banner-button-primary {
         background-color: #F46036;
         border-radius: 25px;
-        border-style: none;
+        border-style: none !important;
         box-sizing: border-box;
         color: #FFFFFF;
         cursor: pointer;
@@ -70,7 +70,7 @@
       .banner-button-secondary {
         background-color: #FDE0D8;
         border-radius: 25px;
-        border-style: none;
+        border-style: none !important;
         box-sizing: border-box;
         color: #F46036;
         cursor: pointer;
