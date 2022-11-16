@@ -9,7 +9,11 @@
 				</div>
 				<div class="card-text">
 				  <h2><%= "#{grandma.first_name} #{grandma.last_name} "%></h2>
+				  <% if grandma.description.length > 30 %>
+				  <p><%= "#{grandma.description[0, 50]}..."%></p>
+				  <% else %>
 				  <p><%= grandma.description %></p>
+				  <% end %>
 				</div>
 			</div>
 		</a>
