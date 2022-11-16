@@ -3,7 +3,9 @@
   border-radius: 25px;
   padding: 40px;
   margin: 10px;
-  min-width: 300px;
+  width: 50%;
+  height: 74vh;
+
 
   h2{
     margin: 20px;
@@ -12,8 +14,33 @@
 
 .form-input{
   border-radius: 25px;
-  margin: 10px;
+  margin: 0px;
   padding: 15px;
   background-color: #FFFFFF;
   width: 100%;
+}
+
+.simple_form {
+  width: 100%;
+}
+
+.new_grandma {
+
+
+}
+
+#new-pics {
+  background-color: #FDE0D8;
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FDOiBJ6ZV4AMBwPB.jpg%3Alarge&f=1&nofb=1&ipt=039740a2027de3bd9561858e352c7eedf70aac832b9e7d331852735392687283&ipo=images");
+  background-size: cover;
+  background-position: center;
+  border-radius: 25px;
+  padding: 40px;
+  margin: 10px;
+  width: 50%;
+  height: 74vh;
+}
+
+#new-div {
+  margin-bottom: 200px;
 }
