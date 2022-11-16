@@ -21,14 +21,83 @@
       margin: 0;
       // change color when main is set
       color: #101419;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
       font-size: 64px;
+      font-weight: lighter;
     }
 
     // change when buttons are finished
-    .banner-button {
-      width: 200px;
-      height: 65px;
-      border-radius: 25px;
-    }
+    // .banner-button {
+    //   width: 200px;
+    //   height: 65px;
+    //   border-radius: 25px;
+    // }
+
+    .banner-button-primary {
+        background-color: #F46036;
+        border-radius: 25px;
+        border-style: none;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: inline-block;
+        font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        height: 40px;
+        width: 160px;
+        line-height: 20px;
+        list-style: none;
+        margin: 0;
+        outline: none;
+        padding: 10px 16px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        transition: color 200ms;
+        vertical-align: baseline;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+      }
+
+      .banner-button-primary:hover,
+      .banner-button-primary:focus {
+        background-color: #d03b12;
+        color: #ffffff;
+      }
+
+      .banner-button-secondary {
+        background-color: #FDE0D8;
+        border-radius: 25px;
+        border-style: none;
+        box-sizing: border-box;
+        color: #F46036;
+        cursor: pointer;
+        display: inline-block;
+        font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        height: 40px;
+        width: 160px;
+        line-height: 20px;
+        list-style: none;
+        margin: 0;
+        outline: none;
+        padding: 10px 16px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        transition: color 200ms;
+        vertical-align: baseline;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+      }
+
+      .banner-button-secondary:hover,
+      .banner-button-secondary:focus {
+        background-color: #f2bdae;
+        color: #F46036;
+      }
 }
