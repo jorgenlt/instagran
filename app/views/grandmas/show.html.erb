@@ -1,12 +1,34 @@
-<div class="d-flex justify-content-center">
-  <div class="banner_show d-flex flex-row">
-    <div id="banner_show_left" class=""></div>
-    <div class="banner_show_middle" class="">
-      <div id="middle-top"></div>
-      <div id="middle-bottom"></div>
+
+<div class="show_container">
+  <div class="d-flex justify-content-center show_images">
+    <div class="banner_show d-flex flex-row">
+      <div id="banner_show_left" style="background-image:url(<%= @grandma.photo_url %>)"></div>
+      <div class="banner_show_middle" class="">
+        <div id="middle-top" style="background-image:url(<%= @grandma.photo_url %>)"></div>
+        <div id="middle-bottom" style="background-image:url(<%= @grandma.photo_url %>)"></div>
+      </div>
+      <div id="banner_show_right" class=""></div>
     </div>
-    <div id="banner_show_right" class=""></div>
+  </div>
+
+
+  <div class="lower_show">
+    <div class ="show_description">
+      <h2><%="#{@grandma.first_name} #{@grandma.last_name}"%></h2>
+      <p><%="#{@grandma.description}"%></p>
+    </div>
+  </div>
+  <div class="booking_form">
+    <%= simple_form_for @grandma do |f| %>
+      <%= f.error_notification %>
+      <h3 class="booking_form_title">Booking details</h3>
+      <div class="form-inputs">
+        <%= f.input :created_at, as: :date, html5: true, label: "Start date"%>
+        <%= f.input :created_at, as: :date, html5: true, label: "End date"%>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, "Book" %>
+      </div>
+    <% end %>
   </div>
 </div>
-
-<h2><%= @grandma.first_name%></h2>
