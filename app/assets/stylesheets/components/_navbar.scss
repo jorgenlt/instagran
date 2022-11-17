@@ -1,6 +1,10 @@
 #navbar {
   height: 100px;
   background-color: #FDE0D8;
+  position: sticky;
+  overflow: hidden;
+  top: 0;
+  width: 100%;
 }
 
 .navbar-lewagon {
