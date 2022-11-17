@@ -2,32 +2,32 @@
   <div class="container">
     <h1>Welcome to</h1>
     <h1><em>insta</em>GRAN</h1>
-    <div class="banner-buttons d-flex flex-column">
-      <%= link_to "sign up", new_user_registration_path, class: "banner-button-primary d-flex justify-content-center align-items-center mt-3 border border-2 border-primary"%>
-      <%= link_to "login", new_user_session_path, class: "banner-button-secondary d-flex justify-content-center align-items-center mt-2 border border-2 border-primary" %>
+    <div class="banner-buttons d-flex flex-column" data-controller="navbar"
+  data-action="scroll@window->navbar#updateNavbar">
+      <%= link_to "Find a grandma", grandmas_path, class: "banner-button-primary d-flex justify-content-center align-items-center mt-3 border border-2 border-primary"%>
+      <%= link_to "Create profile", new_user_registration_path, class: "banner-button-secondary d-flex justify-content-center align-items-center mt-2 border border-2 border-primary" %>
     </div>
   </div>
 </div>
 
-<div class="card-container d-flex flex-column">
-  <div class="d-flex flex-row">
+<div class="container">
+  <div class="d-flex home_cards">
     <% @grandmas.each do |grandma| %>
-
-		<a class="link-wrapper" href="grandmas/<%= grandma.id %>">
-			<div class="main-card" id="main-card-home">
-				<div class="pic-size">
-					<%= cl_image_tag grandma.photo_url[0].key %>
-				</div>
-				<div class="card-text">
-				  <h2><%= "#{grandma.first_name} #{grandma.last_name} "%></h2>
-				  <% if grandma.description.length > 30 %>
-				  <p><%= "#{grandma.description[0, 50]}..."%></p>
-				  <% else %>
-				  <p><%= grandma.description %></p>
-				  <% end %>
-				</div>
-			</div>
-		</a>
+      <div class="main-card" id="main-card-home">
+        <%= link_to grandma_path(grandma), class:"link-wrapper" do  %>
+          <div class="pic-size">
+            <%= cl_image_tag grandma.photo_url[0].key %>
+          </div>
+          <div class="card-text">
+            <h2><%= "#{grandma.first_name} #{grandma.last_name} "%></h2>
+            <% if grandma.description.length > 30 %>
+              <p><%= "#{grandma.description[0, 50]}..."%></p>
+            <% else %>
+              <p><%= grandma.description %></p>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
 		<% end %>
   </div>
 </div>

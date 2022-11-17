@@ -1,18 +1,124 @@
 // Specific CSS for your home-page
-#main-card-home {
-  flex-grow: 0;
-  height: 50vh;
-  margin: 8px 4px 8px 4px;
-  padding: 10px;
-  border-radius: 25px;
-  background: #FFFFFF;
-  box-shadow: 1px 1px 0px rgba(16, 20, 25, 0.3);
+// #main-card-home {
+//   flex-grow: 0;
+//   height: 50vh;
+//   overflow-y: scroll;
+//   margin: 8px 4px 8px 4px;
+//   padding: 10px;
+//   border-radius: 25px;
+//   background: #FFFFFF;
+//   box-shadow: 1px 1px 0px rgba(16, 20, 25, 0.3);
 
-  img {
-    border-radius: 25px;
-    width: 100%;
-    object-fit: cover;
-    height: 25vh;
-    min-width: 150px;
+//   img {
+//     border-radius: 25px;
+//     width: 100%;
+//     object-fit: cover;
+//     height: 25vh;
+//     min-width: 150px;
+//   }
+// }
+.home_cards{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.button_banner{
+  background-color: #F6F7F8;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row !important;
+  position: fixed !important;
+  top: 10px !important;
+  left: 0px;
+  width: 100vw;
+  padding-top: 90px;
+  transition: 0.5s;
+
+  p {
+    font-size: 20px;
+    color: white;
+    opacity: .7;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   }
+
+  h1 {
+    margin: 0;
+    color: #101419;
+    font-size: 64px;
+    font-weight: lighter;
+  }
+
+  .banner-button-primary {
+      background-color: #F46036;
+      border-radius: 25px;
+      border-style: none !important;
+      box-sizing: border-box;
+      color: #FFFFFF;
+      cursor: pointer;
+      display: inline-block;
+      font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      height: 40px;
+      width: 160px;
+      line-height: 20px;
+      list-style: none;
+      margin-top: 1rem !important;
+      margin-bottom: 1rem !important;
+      margin-left: 10px;
+      outline: none;
+      padding: 10px 16px;
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+      transition: color 200ms;
+      vertical-align: baseline;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+
+    .banner-button-primary:hover,
+    .banner-button-primary:focus {
+      background-color: #d03b12;
+      color: #ffffff;
+    }
+
+    .banner-button-secondary {
+      background-color: #FDE0D8;
+      border-radius: 25px;
+      border-style: none !important;
+      box-sizing: border-box;
+      color: #F46036;
+      cursor: pointer;
+      display: inline-block;
+      font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      height: 40px;
+      width: 160px;
+      line-height: 20px;
+      list-style: none;
+      margin-top: 1rem !important;
+      margin-bottom: 1rem !important;
+      margin-left: 10px;
+      outline: none;
+      padding: 10px 16px;
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+      transition: color 200ms;
+      vertical-align: baseline;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+
+    .banner-button-secondary:hover,
+    .banner-button-secondary:focus {
+      background-color: #f2bdae;
+      color: #F46036;
+    }
+
 }
