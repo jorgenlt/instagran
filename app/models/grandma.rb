@@ -5,4 +5,11 @@ class Grandma < ApplicationRecord
   belongs_to :user
   has_many_attached :photo_url
   # validates :photo_url, limit: { min: 1, max: 3 }
+  
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_description,
+  against: [ :first_name, :last_name, :description ],
+  using: {
+    tsearch: { prefix: true }
+  }
 end

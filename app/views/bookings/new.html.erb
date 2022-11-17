@@ -1,0 +1,80 @@
+<%= "Your Booking" %>
+<p>Grandma details</p>
+<ul>
+	<li><%= @grandma.first_name %></li>
+	<li><%= @grandma.last_name %></li>
+	<li><%= @grandma.address %></li>
+	<li><img src =<%= @grandma.photo_url %>></li>
+
+</ul>
+
+
+<div class="pay-container">
+	<div class="pay-2-content">
+		<p class="text">Please pay here:</p>
+	</div>
+
+	<div class="centre-content">
+		<h1 class="price"><span><%= @grandma.hourly_rate %></span></h1>
+		<p class="course">
+		Rent the perfect grandma now !
+		</p>
+	</div>
+
+	<div class="last-content">
+		<button type="button" class="pay-now-btn">
+		Apply Coupons
+		</button>
+		<button type="button" class="pay-now-btn">
+		Pay with Netbanking
+		</button>
+
+		<!-- <button type="button" class="pay-now-btn">
+		Netbanking options
+		</button> -->
+	</div>
+
+	<div class="card-details">
+		<p>Pay using Credit or Debit card</p>
+
+		<div class="card-number">
+		<label> Card Number </label>
+		<input
+			type="text"
+			class="card-number-field"
+			placeholder="###-###-###"/>
+		</div>
+		<br />
+		<div class="date-number">
+		<label> Expiry Date </label>
+		<input type="text" class="date-number-field"
+				placeholder="DD-MM-YY" />
+		</div>
+
+		<div class="cvv-number">
+		<label> CVV number </label>
+		<input type="text" class="cvv-number-field"
+				placeholder="xxx" />
+		</div>
+		<div class="nameholder-number">
+		<label> Card Holder name </label>
+		<input
+			type="text"
+			class="card-name-field"
+			placeholder="Enter your Name"/>
+		</div>
+		<%= simple_form_for [@grandma, @booking] do |f| %>
+		          <%= f.error_notification %>
+		          <h3 class="booking_form_title">Booking details</h3>
+		          <div class="form-inputs">
+		            <%= f.input :date, as: :date, html5: true, label: "Start date"%>
+		            <%= f.input :date, as: :date, html5: true, label: "End date"%>
+		            
+		          </div>
+		            <div class="form-actions">
+		              <%= f.button :submit, "Book" %>
+		            </div>
+		        <% end %>
+	</div>
+</div>
+
