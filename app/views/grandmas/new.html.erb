@@ -11,7 +11,8 @@
       <%= f.input :last_name, label: false, placeholder: "Last name", input_html: { class:"form-input" }  %>
       <%= f.input :address, label: false, placeholder: "Address", input_html: { class:"form-input" }  %>
       <%= f.input :description, label: false, placeholder: "Description", as: :text, input_html: { class:"form-input", :rows => 5 }  %>
-      <%= f.button :submit, input_html: { class:"button-primary" }  %>
+      <%= f.input :photo_url, as: :file, input_html: { multiple: true } %>
+      <%= f.button :submit, "Create grandma", input_html: { class:"button-primary" }  %>
     <% end %>
   </div>
 </div>
