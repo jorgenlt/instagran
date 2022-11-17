@@ -5,8 +5,12 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+<<<<<<< HEAD
 require "open-uri"
 
+=======
+Booking.destroy_all
+>>>>>>> f72b4f28f48946cba2a9f91a79342acad1275fe1
 Grandma.destroy_all
 User.destroy_all
 

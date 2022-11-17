@@ -4,14 +4,14 @@
       <span><em>insta</em><strong>GRAN</strong></span>
     <% end %>
 
-    <div id="nav-search-div">
-      <%= simple_form_for "@user" do |f| %>
-      <div class="d-flex flex-row" id="search-div">
-        <%= f.input :search, label:false, id: "search-field" %>
-          <%= f.button :submit, "search", id: "search-button" %>
-      </div>
-      <% end %>
-    </div>
+  <%= form_with url: grandmas_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find your grandma"
+    %>
+    <%= submit_tag "Search", class: "button-primary" %>
+  <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

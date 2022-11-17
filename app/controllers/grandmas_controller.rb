@@ -1,6 +1,15 @@
 class GrandmasController < ApplicationController
   def index
-    @grandmas = Grandma.all
+    if params[:query].present?
+      sql_query = <<~SQL
+        grandmas.first_name @@ :query
+        OR grandmas.last_name @@ :query
+        OR grandmas.description @@ :query
+      SQL
+      @grandmas = Grandma.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @grandmas = Grandma.all
+    end
   end
 
   def show

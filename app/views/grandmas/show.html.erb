@@ -35,9 +35,11 @@
             <%= f.input :created_at, as: :date, html5: true, label: "Start date"%>
             <%= f.input :created_at, as: :date, html5: true, label: "End date"%>
           </div>
-          <div class="form-actions">
-            <%= f.button :submit, "Book" %>
-          </div>
+          <a href="/grandmas/<%= @grandma.id %>/bookings/new">
+            <div class="form-actions">
+              <%= f.button :submit, "Book" %>
+            </div>
+          </a>
         <% end %>
       </div>
     </div>
