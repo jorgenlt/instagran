@@ -77,13 +77,5 @@ group :test do
 end
 
 gem "devise"
-<<<<<<< HEAD
 gem "cloudinary"
-=======
-
-
 gem "pg_search"
-
-gem "dotenv-rails", groups: [:development, :test]
-
->>>>>>> f72b4f28f48946cba2a9f91a79342acad1275fe1
