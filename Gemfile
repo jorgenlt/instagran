@@ -79,4 +79,3 @@ end
 gem "devise"
 gem "cloudinary"
 gem "pg_search"
-gem "dotenv-rails", groups: [:development, :test]
