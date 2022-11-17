@@ -1,11 +1,22 @@
-
 <div class="show_container">
   <div class="d-flex justify-content-center show_images">
     <div class="banner_show d-flex flex-row">
-      <div id="banner_show_left" style="background-image:url(<%= @grandma.photo_url %>)"></div>
-      <div class="banner_show_middle" class="">
+    <% if @grandma.photo_url[0].nil? %>
+      <div id="banner_show_left" style="background-image:url(https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png)"></div>
+        <% else %>
+        <div id="banner_show_left" style="background-image:url(<%= cl_image_path @grandma.photo_url[0].key %>)"></div>
+        <% end %>
+      <div class="banner_show_middle">
+      <% if @grandma.photo_url[1].nil? %>
         <div id="middle-top" style="background-image:url(https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png)"></div>
+        <% else %>
+        <div id="middle-top" style="background-image:url(<%= cl_image_path @grandma.photo_url[1].key %>)"></div>
+        <% end %>
+         <% if @grandma.photo_url[2].nil? %>
         <div id="middle-bottom" style="background-image:url(https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png)"></div>
+        <% else %>
+        <div id="middle-bottom" style="background-image:url(<%= cl_image_path @grandma.photo_url[2].key %>)"></div>
+        <% end %>
       </div>
       <div id="banner_show_right" style="background-image:url(https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoianVsaWFzbmQiLCJhIjoiY2w5czZsZXQyMWk3ODNvbGJ3M29zdjdzYyJ9.3MLsAvXvaTpWG2KQbc1JzA)">></div>
     </div>
