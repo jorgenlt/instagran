@@ -12,6 +12,22 @@
 <div class="card-container d-flex flex-column">
   <div class="d-flex flex-row">
     <% @grandmas.each do |grandma| %>
+		<a class="link-wrapper" href="grandmas/<%= grandma.id %>">
+			<div class="main-card">
+				<div class="pic-size">
+					<%= cl_image_tag grandma.photo_url[0].key %>
+				</div>
+				<div class="card-text">
+				  <h2><%= "#{grandma.first_name} #{grandma.last_name} "%></h2>
+				  <% if grandma.description.length > 30 %>
+				  <p><%= "#{grandma.description[0, 50]}..."%></p>
+				  <% else %>
+				  <p><%= grandma.description %></p>
+				  <% end %>
+				</div>
+			</div>
+		</a>
+
         <a href="grandmas/<%= grandma.id %>">
           <div id="main-card-home">
             <div class="pic-size">
