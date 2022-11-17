@@ -5,13 +5,17 @@
 		<a class="link-wrapper" href="grandmas/<%= grandma.id %>">
 			<div class="main-card">
 				<div class="pic-size">
-					<img src = <%= grandma.photo_url %>>
+					<%= cl_image_tag grandma.photo_url[0].key %>
 				</div>
 				<div class="card-text">
-				  <h2><%= "#{grandma.first_name} #{grandma.last_name} "%></h2>
+				  <h3><%= "#{grandma.first_name} #{grandma.last_name} "%></h3>
+          <p id="address"><em><%= "#{grandma.address}" %></em></p>
 				  <% if grandma.description.length > 30 %>
-          <p><em><%= "#{grandma.address}" %></em></p>
-				  <p><%= "#{grandma.description[0, 50]}..."%></p>
+
+
+
+				  <p><%= "#{grandma.description[0, 100]}..."%></p>
+
 				  <% else %>
 				  <p><%= grandma.description %></p>
 				  <% end %>

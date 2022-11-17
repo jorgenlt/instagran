@@ -1,1 +1,18 @@
 // Specific CSS for your home-page
+#main-card-home {
+  flex-grow: 0;
+  height: 50vh;
+  margin: 8px 4px 8px 4px;
+  padding: 10px;
+  border-radius: 25px;
+  background: #FFFFFF;
+  box-shadow: 1px 1px 0px rgba(16, 20, 25, 0.3);
+
+  img {
+    border-radius: 25px;
+    width: 100%;
+    object-fit: cover;
+    height: 25vh;
+    min-width: 150px;
+  }
+}
