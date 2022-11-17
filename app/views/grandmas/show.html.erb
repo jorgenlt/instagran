@@ -14,6 +14,7 @@
       <div class ="show_description">
           <h2><%="#{@grandma.first_name} #{@grandma.last_name}"%></h2>
           <p><%="#{@grandma.description}"%></p>
+          <p class="show_rate"><%="€#{@grandma.hourly_rate}/hr"%></p>
       </div>
       <div class="booking_form">
         <%= simple_form_for @grandma do |f| %>

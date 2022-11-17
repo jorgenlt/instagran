@@ -15,7 +15,7 @@
 	</div>
 
 	<div class="centre-content">
-		<h1 class="price"><span>70$/h</span></h1>
+		<h1 class="price"><span><%= @grandma.hourly_rate %></span></h1>
 		<p class="course">
 		Rent the perfect grandma now !
 		</p>
@@ -67,9 +67,9 @@
 		          <%= f.error_notification %>
 		          <h3 class="booking_form_title">Booking details</h3>
 		          <div class="form-inputs">
-		            <%= f.input :start_time, as: :time, html5: true, label: "Start time"%>
-		            <%= f.input :end_time, as: :time, html5: true, label: "End time"%>
-		            <%= f.input :date, as: :date, html5: true, label: "Date"%>
+		            <%= f.input :date, as: :date, html5: true, label: "Start date"%>
+		            <%= f.input :date, as: :date, html5: true, label: "End date"%>
+		            
 		          </div>
 		            <div class="form-actions">
 		              <%= f.button :submit, "Book" %>
