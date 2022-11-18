@@ -29,19 +29,50 @@
 
     <div class="d-flex flex-column me-3" style="width: 50%">
       <% @user.bookings.each do |booking| %>
-      <a class="link-wrapper" href="users/<%= user.id %>">
-        <div class="main-card">
-          <div class="pic-size">
-            <%# <%= cl_image_tag booking.@grandma.photo_url[0].key %> %>
+        <%= link_to grandma_path(booking.grandma), class:"link-wrapper booking-card mb-3" do  %>
+          <div class="main-card">
+            <div class="pic-size">
+              <%= cl_image_tag booking.grandma.photo_url.first.key %>
+            </div>
+            <div class="card-text">
+              <h3><%= "#{booking.grandma.first_name} #{booking.grandma.last_name} "%></h3>
+              <p><%= "#{booking.start_time} - #{booking.end_time} "%></p>
+            </div>
+          <% if booking.status == "pending" %>
+          <p>Your booking is not accepted yet.</p>
+          <% elsif booking.status == "Accepted" %>
+          <p>Your booking is accepted!</p>
+          <% else %>
+          <p>Your booking got rejected!</p>
+          <% end %>
           </div>
-          <div class="card-text">
-            <h3><%= "#{booking.grandma.first_name} #{booking.grandma.last_name} "%></h3>
-            <p><%= "#{booking.start_date} - #{booking.grandma.end_date} "%></p>
-          </div>
-        </div>
-      </a>
+        <% end %>
       <% end %>
-    </div>
 
+    </div>
+  <div class="user-bookings">
+      <% @host_bookings.each do |booking| %>
+        <%= link_to user_path(booking.user), class:"link-wrapper booking-card mb-3" do  %>
+          <div class="main-card">
+            <div class="pic-size">
+            </div>
+            <div class="card-text">
+              <h3><%= "#{booking.user.username}"%></h3>
+              <p><%= "#{booking.start_time} - #{booking.end_time} "%></p>
+            </div>
+            <% if booking.status == "pending" %>
+            <div class="bookings-buttons">
+              <%= link_to "Accept booking", booking_path(booking, booking: {status: "Accepted"}), data: {turbo_method: :patch,}, class:"button-primary"%>
+              <%= link_to "Reject booking", booking_path(booking, booking: {status: "Rejected"}), data: {turbo_method: :patch,}, class:"button-primary"%>
+            </div>
+            <% elsif booking.status == "Accepted" %>
+            <p>You accepted this booking!</p>
+            <% else %>
+            <p>You rejected this booking!</p>
+            <% end %>
+          </div>
+          <% end %>
+      <% end %>
+  </div>
   </div>
 </div>
