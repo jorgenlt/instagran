@@ -10,10 +10,24 @@ class GrandmasController < ApplicationController
     else
       @grandmas = Grandma.all
     end
+    @markers = @grandmas.geocoded.map do |grandma|
+      {
+        lat: grandma.latitude,
+        lng: grandma.longitude,
+        image_url: helpers.asset_url("granny-pin.png")
+      }
+    end
   end
 
   def show
     @grandma = Grandma.find(params[:id])
+    @markers = Grandma.where(id: params[:id]).geocoded.map do |grandma|
+      {
+        lat: grandma.latitude,
+        lng: grandma.longitude,
+        image_url: helpers.asset_url("granny-pin.png")
+      }
+    end
   end
 
   def new
@@ -35,14 +49,9 @@ class GrandmasController < ApplicationController
   def destroy
   end
 
-
-
-
-
-
   private
 
   def grandma_params
-    params.require(:grandma).permit(:first_name, :last_name, :address, :description, :user_id, photo_url: [])
+    params.require(:grandma).permit(:first_name, :last_name, :address, :description, :user_id)
   end
 end

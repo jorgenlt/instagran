@@ -1,6 +1,6 @@
 <div class="container p-5">
   <h1 class="fw-light mt-5">Profile</h1>
-  <img class="avatar mt-3" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
+  <img class="avatar mt-3" alt="avatar" src="<%= current_user.profile_photo.key %>" />
   <h3 class="username mt-3"><strong><%="#{@user.username}"%></strong></h3>
   <p class="address"><%="#{@user.address}"%></p>
 
