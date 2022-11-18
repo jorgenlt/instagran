@@ -2,7 +2,7 @@
 	<div class="links-card">
 		<div class="new-booking-card">
 		<h2>Book <%= @grandma.first_name %> now!</h2>
-			<img src =<%= @grandma.photo_url %>>
+		<%= cl_image_tag @grandma.photo_url[0].key %>
 			<div class="card-text">
 				<ul>
 					<li><%= @grandma.first_name %> <%= @grandma.last_name %></li>
