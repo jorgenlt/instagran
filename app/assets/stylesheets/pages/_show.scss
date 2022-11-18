@@ -1,6 +1,7 @@
 .show_container{
   max-width: 1400px;
   margin: 0 auto;
+
 }
 
 .show_images{
@@ -8,14 +9,18 @@
 }
 
 .show_description{
-  margin: 35px;
+  margin: 30px;
+  padding: 0%;
 }
 
 .lower_show{
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin: 10px;
+  // align-items: center;
+  // margin: 10px;
+  margin-left: 20px;
+  margin-right: 5px;
+  margin-bottom: 40px;
 }
 
 .show_rate{
