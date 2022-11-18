@@ -1,6 +1,6 @@
 <div class="container p-5">
   <h1 class="fw-light mt-5">Profile</h1>
-  <img class="avatar mt-3" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
+  <img class="avatar mt-3" alt="avatar" src="<%= current_user.profile_photo.key %>" />
   <h3 class="username mt-3"><strong><%="#{@user.username}"%></strong></h3>
   <p class="address"><%="#{@user.address}"%></p>
 
@@ -32,7 +32,7 @@
       <a class="link-wrapper" href="users/<%= user.id %>">
         <div class="main-card">
           <div class="pic-size">
-            <%= cl_image_tag booking.grandma.photo_url.key %>
+            <%# <%= cl_image_tag booking.@grandma.photo_url[0].key %> %>
           </div>
           <div class="card-text">
             <h3><%= "#{booking.grandma.first_name} #{booking.grandma.last_name} "%></h3>
