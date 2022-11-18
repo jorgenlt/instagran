@@ -12,6 +12,7 @@ Grandma.destroy_all
 User.destroy_all
 
 user = User.create!(username: "Alex", email: "agagjk@gmail.com", password:"1237654w6576", address: "dgjhdgjhdghv")
+user = User.create!(username: "Julia", email: "julia@gmail.com", password:"123456", address: "dgjhdgjhdghv")
 
 photo_one = URI.open("https://imageio.forbes.com/specials-images/imageserve/5e00ccaae961e1000739bfd0/John-Winsor-Open-Assembly-Open-Talent/960x0.jpg?format=jpg&width=960")
 photo_two = URI.open("https://mediaproxy.salon.com/width/1200/https://media.salon.com/2017/11/jenifer-lewis3.jpg")

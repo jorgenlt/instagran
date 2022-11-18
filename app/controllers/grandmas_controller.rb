@@ -21,6 +21,7 @@ class GrandmasController < ApplicationController
 
   def show
     @grandma = Grandma.find(params[:id])
+    @booking = Booking.new
     @markers = Grandma.where(id: params[:id]).geocoded.map do |grandma|
       {
         lat: grandma.latitude,
