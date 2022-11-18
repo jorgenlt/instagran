@@ -1,80 +1,79 @@
-<%= "Your Booking" %>
-<p>Grandma details</p>
-<ul>
-	<li><%= @grandma.first_name %></li>
-	<li><%= @grandma.last_name %></li>
-	<li><%= @grandma.address %></li>
-	<li><img src =<%= @grandma.photo_url %>></li>
-
-</ul>
-
-
-<div class="pay-container">
-	<div class="pay-2-content">
-		<p class="text">Please pay here:</p>
+<div class="everything">
+	<div class="links-card">
+		<div class="new-booking-card">
+		<h2>Book <%= @grandma.first_name %> now!</h2>
+			<img src =<%= @grandma.photo_url %>>
+			<div class="card-text">
+				<ul>
+					<li><%= @grandma.first_name %> <%= @grandma.last_name %></li>
+					<li><%= @grandma.address %></li>
+				</ul>
+			</div>
+		</div>
 	</div>
+	<div class="middel-card">
+		<div class="pay-form">
+			<p class="text">Please pay here:</p>
+			<div class="centre-content">
+				<h1 class="price"><span><%= @grandma.hourly_rate %> $/h</span></h1>
+				<p class="course">
+				Rent the perfect grandma now !
+				</p>
+			</div>
 
-	<div class="centre-content">
-		<h1 class="price"><span><%= @grandma.hourly_rate %></span></h1>
-		<p class="course">
-		Rent the perfect grandma now !
-		</p>
+			<div class="last-content">
+				<button type="button" class="button-secondary">
+				WePay
+				</button>
+				<button type="button" class="button-secondary">
+				PayPal
+				</button>
+			</div>
+
+			<div class="form-inputs">
+				<p>Pay using Credit or Debit card</p>
+
+				<div class="card-number">
+				<label class="label-pay"> Card Number </label>
+				<input
+					type="text"
+					class="form-select mx-1 date required"
+					placeholder="###-###-###"/>
+				</div>
+				<div class="date-number">
+				<label class="label-pay"> Expiry Date </label>
+				<input type="text" class="form-select mx-1 date required"
+						placeholder="DD-MM-YY" />
+				</div>
+
+				<div class="cvv-number">
+				<label class="label-pay"> CVV number </label>
+				<input type="text" class="form-select mx-1 number required"
+						placeholder="xxx" />
+				</div>
+				<div class="nameholder-number">
+				<label class="label-pay"> Card Holder name </label>
+				<input
+					type="text"
+					class="form-select mx-1 date required"
+					placeholder="Enter your Name"/>
+				</div>
+			</div>
+		</div>
 	</div>
-
-	<div class="last-content">
-		<button type="button" class="pay-now-btn">
-		Apply Coupons
-		</button>
-		<button type="button" class="pay-now-btn">
-		Pay with Netbanking
-		</button>
-
-		<!-- <button type="button" class="pay-now-btn">
-		Netbanking options
-		</button> -->
-	</div>
-
-	<div class="card-details">
-		<p>Pay using Credit or Debit card</p>
-
-		<div class="card-number">
-		<label> Card Number </label>
-		<input
-			type="text"
-			class="card-number-field"
-			placeholder="###-###-###"/>
-		</div>
-		<br />
-		<div class="date-number">
-		<label> Expiry Date </label>
-		<input type="text" class="date-number-field"
-				placeholder="DD-MM-YY" />
-		</div>
-
-		<div class="cvv-number">
-		<label> CVV number </label>
-		<input type="text" class="cvv-number-field"
-				placeholder="xxx" />
-		</div>
-		<div class="nameholder-number">
-		<label> Card Holder name </label>
-		<input
-			type="text"
-			class="card-name-field"
-			placeholder="Enter your Name"/>
-		</div>
-		<%= simple_form_for [@grandma, @booking] do |f| %>
-		          <%= f.error_notification %>
-		          <h3 class="booking_form_title">Booking details</h3>
-		          <div class="form-inputs">
-		            <%= f.input :date, as: :date, html5: true, label: "Start date"%>
-		            <%= f.input :date, as: :date, html5: true, label: "End date"%>
-		            
+	<div class="right-card">
+				<%= simple_form_for [@grandma, @booking] do |f| %>
+		        <%= f.error_notification %>
+		        <h3 class="booking_form_title">Booking details</h3>
+		        <div class="form-inputs">
+		          <%= f.input :date, as: :date, html5: true, label: "Date"%>
+		          <%= f.input :start_time, as: :time, html5: true, label: "Start time"%>
+		          <%= f.input :end_time, as: :time, html5: true, label: "End time"%>
+		         </div>
+		         
+		          <div class="form-actions">
+		            <%= f.button :submit, "Book" %>
 		          </div>
-		            <div class="form-actions">
-		              <%= f.button :submit, "Book" %>
-		            </div>
-		        <% end %>
-	</div>
+		     <% end %>
+ </div>
 </div>
-
