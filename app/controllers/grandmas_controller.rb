@@ -35,11 +35,6 @@ class GrandmasController < ApplicationController
   def destroy
   end
 
-
-
-
-
-
   private
 
   def grandma_params

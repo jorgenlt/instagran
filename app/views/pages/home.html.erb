@@ -5,7 +5,11 @@
     <div class="banner-buttons d-flex flex-column" data-controller="navbar"
   data-action="scroll@window->navbar#updateNavbar">
       <%= link_to "Find a grandma", grandmas_path, class: "banner-button-primary d-flex justify-content-center align-items-center mt-3 border border-2 border-primary"%>
+      <% if user_signed_in? %>
+      <%= link_to "My profile", user_path(current_user), class: "banner-button-secondary d-flex justify-content-center align-items-center mt-2 border border-2 border-primary" %>
+     <% else %>
       <%= link_to "Create profile", new_user_registration_path, class: "banner-button-secondary d-flex justify-content-center align-items-center mt-2 border border-2 border-primary" %>
+      <% end %>
     </div>
   </div>
 </div>

@@ -19,23 +19,37 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <%# if user_signed_in? %>
-          <li style="display: none" nav-item d-flex align-items-center justify-content-center" id="login-btn">
-            <%= link_to "login", "#", class: "nav-link" %>
+        <% if user_signed_in? %>
+          <% if current_user.profile_photo.attached? %>
+            <li class="nav-item dropdown d-flex align-items-center justify-content-center ">
+              <%= link_to user_path(current_user) do %>
+                <%= cl_image_tag current_user.profile_photo.key, class: "avatar" %>
+              <% end %>
+            </li>
+          <% else %>
+            <li class="nav-item dropdown d-flex align-items-center justify-content-center ">
+              <%= link_to user_path(current_user) do %>
+                <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png", class: "avatar" %>
+              <% end %>
+            </li>
+          <% end %>
+        <% else %>
+          <li style="display: none" class= "nav-item d-flex align-items-center justify-content-center" id="login-btn">
+            <%= link_to "login", "/users/sign_in", class: "nav-link" %>
           </li>
-          <li class="nav-item dropdown d-flex align-items-center justify-content-center">
-            <%= image_tag "https://cdn0.iconfinder.com/data/icons/user-pictures/100/maturewoman-3-512.png",
-                          class: "avatar dropdown-toggle",
-                          id: "navbarDropdown",
-                          data: { bs_toggle: "dropdown" },
-                          'aria-haspopup': true,
-                          'aria-expanded': false %>
+        <% end %>
+
+
+                          <%# # class: "avatar dropdown-toggle",
+                          # id: "navbarDropdown",
+                          # data: { bs_toggle: "dropdown" },
+                          # 'aria-haspopup': true,
+                          # 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Browse grandmas", grandmas_path, class: "dropdown-item" %>
               <%= link_to "Create new grandma", new_grandma_path, class: "dropdown-item" %>
               <%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete},
-                          class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
         <%# else %>
