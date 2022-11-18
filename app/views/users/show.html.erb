@@ -1,10 +1,16 @@
 <div class="container p-5">
   <h1 class="fw-light mt-5">Profile</h1>
-  <img class="avatar mt-3" alt="avatar" src="<%= current_user.profile_photo.key %>" />
+  <div class="pro-p">
+      <% if current_user.profile_photo.attached? %>
+            <%= cl_image_tag current_user.profile_photo.key, class: "avatar-large" %>
+      <% else %>
+            <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png", class: "avatar-large" %>
+      <% end %>
+  </div>
+
   <h3 class="username mt-3"><strong><%="#{@user.username}"%></strong></h3>
   <p class="address"><%="#{@user.address}"%></p>
 
-  <h2 class="fw-light mt-5 mb-5">My bookings:</h2>
 
   <div class="profile_card_wrapper mt-5 d-flex justify-content-between flex-row">
     <%# <div class="d-flex flex-column me-3" style="width: 50%">
@@ -28,20 +34,61 @@
     </div> %>
 
     <div class="d-flex flex-column me-3" style="width: 50%">
+      <h2 class="fw-light mt-5 mb-5">My bookings:</h2>
       <% @user.bookings.each do |booking| %>
-      <a class="link-wrapper" href="users/<%= user.id %>">
-        <div class="main-card">
-          <div class="pic-size">
-            <%# <%= cl_image_tag booking.@grandma.photo_url[0].key %> %>
+        <%= link_to grandma_path(booking.grandma), class:"link-wrapper booking-card mb-3" do  %>
+          <div class="main-card">
+            <div class="pic-size">
+              <%= cl_image_tag booking.grandma.photo_url.first.key %>
+            </div>
+            <div class="card-text">
+              <h3><%= "#{booking.grandma.first_name} #{booking.grandma.last_name} "%></h3>
+              <p><%= "#{booking.start_time} - #{booking.end_time} "%></p>
+            </div>
+          <% if booking.status == "pending" %>
+          <p>Your booking is not accepted yet.</p>
+          <% elsif booking.status == "Accepted" %>
+          <p>Your booking is accepted!</p>
+          <% else %>
+          <p>Your booking got rejected!</p>
+          <% end %>
           </div>
-          <div class="card-text">
-            <h3><%= "#{booking.grandma.first_name} #{booking.grandma.last_name} "%></h3>
-            <p><%= "#{booking.start_date} - #{booking.grandma.end_date} "%></p>
-          </div>
-        </div>
-      </a>
+        <% end %>
       <% end %>
-    </div>
 
+    </div>
+  <div class="user-bookings">
+    <h2 class="fw-light mt-5 mb-5">Grandma requests:</h2>
+      <% @host_bookings.each do |booking| %>
+        <%= link_to user_path(booking.user), class:"link-wrapper booking-card mb-3" do  %>
+          <div class="main-card">
+            <div class="pic-size">
+              <% if booking.user.profile_photo.attached? %>
+            <%= cl_image_tag booking.user.profile_photo.key, class: "avatar-large" %>
+      <% else %>
+            <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png", class: "avatar-large" %>
+      <% end %>
+            </div>
+            <div class="card-text">
+              <h3><%= "#{booking.user.username}"%></h3>
+              <p><%= "#{booking.start_time} - #{booking.end_time} "%></p>
+            </div>
+            <% if booking.status == "pending" %>
+            <div class="bookings-buttons">
+              <%= link_to "Accept booking", booking_path(booking, booking: {status: "Accepted"}), data: {turbo_method: :patch,}, class:"button-primary"%>
+              <%= link_to "Reject booking", booking_path(booking, booking: {status: "Rejected"}), data: {turbo_method: :patch,}, class:"button-primary"%>
+            </div>
+            <% elsif booking.status == "Accepted" %>
+            <p>You accepted this booking!</p>
+            <% else %>
+            <p>You rejected this booking!</p>
+            <% end %>
+          </div>
+          <% end %>
+      <% end %>
   </div>
+  </div>
+
+  <%= link_to "Create a grandma", new_grandma_path, class: "button-primary"%>
+  <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "button-secondary" %>
 </div>
