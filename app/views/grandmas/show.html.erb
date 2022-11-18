@@ -31,18 +31,15 @@
           <p class="show_rate"><%="€#{@grandma.hourly_rate}/hr"%></p>
       </div>
       <div class="booking_form">
-        <%= simple_form_for @grandma do |f| %>
+        <%= simple_form_for :new_booking, url: new_grandma_booking_path(@grandma), method: :get do |f| %>
           <%= f.error_notification %>
           <h3 class="booking_form_title">Booking details</h3>
-          <div class="form-inputs">
-            <%= f.input :created_at, as: :date, html5: true, label: "Start date"%>
-            <%= f.input :created_at, as: :date, html5: true, label: "End date"%>
+          <div class="form-inputs" data-controller="date">
+            <%= f.input :date, as: :date, html5: true, label: "Date" %>
           </div>
-          <a href="/grandmas/<%= @grandma.id %>/bookings/new">
             <div class="form-actions">
               <%= f.button :submit, "Book" %>
             </div>
-          </a>
         <% end %>
       </div>
     </div>

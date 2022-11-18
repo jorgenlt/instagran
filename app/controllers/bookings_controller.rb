@@ -20,7 +20,8 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = @user
     @booking.grandma = @grandma
-
+    @price = (@booking.end_time - @booking.start_time)/3600*@booking.grandma.hourly_rate
+    @booking.price = @price
     if @booking.save
       redirect_to user_path(@user)
     else
