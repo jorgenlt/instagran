@@ -75,4 +75,7 @@
       <% end %>
   </div>
   </div>
+
+  <%= link_to "Create a grandma", new_grandma_path, class: "button-primary"%>
+  <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "button-secondary" %>
 </div>
