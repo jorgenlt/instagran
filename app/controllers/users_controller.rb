@@ -4,6 +4,8 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
+    @grandmas = @user.grandmas
+    @host_bookings = Booking.where(grandma: @grandmas)
   end
 
   def create
